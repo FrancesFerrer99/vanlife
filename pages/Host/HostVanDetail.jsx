@@ -48,7 +48,9 @@ export default function HostVanDetail() {
             {currentVan &&
                 <div className="host-van-detail-layout-container">
                     <div className="host-van-detail">
-                        <img src={currentVan.imageUrl} />
+                        <div className="host-van-img">
+                            <img src={currentVan.imageUrl} />
+                        </div>
                         <div className="host-van-detail-info-text">
                             <i
                                 className={`van-type van-type-${currentVan.type}`}
@@ -67,19 +69,19 @@ export default function HostVanDetail() {
                             style={({ isActive }) => isActive ? activeStyles : null}
                         >
                             Details
-                    </NavLink>
+                        </NavLink>
                         <NavLink
                             to="pricing"
                             style={({ isActive }) => isActive ? activeStyles : null}
                         >
                             Pricing
-                    </NavLink>
+                        </NavLink>
                         <NavLink
                             to="photos"
                             style={({ isActive }) => isActive ? activeStyles : null}
                         >
                             Photos
-                    </NavLink>
+                        </NavLink>
                     </nav>
                     <Outlet context={{ currentVan }} />
                 </div>}
